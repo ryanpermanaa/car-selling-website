@@ -1,9 +1,11 @@
-@extends('layouts.clean')
+@props(['title' => ''])
 
-@section('childContent')
+<x-base-layout :$title>
+
     <x-header />
 
-    @yield('content')
+    {{ $slot }}
 
     <x-footer></x-footer>
-@endsection
+
+</x-base-layout>

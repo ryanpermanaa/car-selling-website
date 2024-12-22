@@ -1,8 +1,4 @@
-@extends('layouts.app')
-
-@section('title', 'Home Page')
-
-@section('content')
+<x-app-layout title="Home">
 
     <!-- Home Slider -->
     <section class="hero-slider">
@@ -83,7 +79,8 @@
                 <div class="car-items-listing">
                     <div class="car-item card">
                         <a href="/view.html">
-                            <img src="/img/cars/Lexus-RX200t-2016/1.jpeg" alt="" class="car-item-img rounded-t" />
+                            <img src="/img/cars/Lexus-RX200t-2016/1.jpeg" alt=""
+                                class="car-item-img rounded-t" />
                         </a>
                         <div class="p-medium">
                             <div class="flex items-center justify-between">
@@ -107,7 +104,8 @@
                     </div>
                     <div class="car-item card">
                         <a href="/view.html">
-                            <img src="/img/cars/Lexus-RX200t-2016/1.jpeg" alt="" class="car-item-img rounded-t" />
+                            <img src="/img/cars/Lexus-RX200t-2016/1.jpeg" alt=""
+                                class="car-item-img rounded-t" />
                         </a>
                         <div class="p-medium">
                             <div class="flex items-center justify-between">
@@ -131,7 +129,8 @@
                     </div>
                     <div class="car-item card">
                         <a href="/view.html">
-                            <img src="/img/cars/Lexus-RX200t-2016/1.jpeg" alt="" class="car-item-img rounded-t" />
+                            <img src="/img/cars/Lexus-RX200t-2016/1.jpeg" alt=""
+                                class="car-item-img rounded-t" />
                         </a>
                         <div class="p-medium">
                             <div class="flex items-center justify-between">
@@ -459,4 +458,4 @@
         <!--/ New Cars -->
     </main>
 
-@endsection
+</x-app-layout>
