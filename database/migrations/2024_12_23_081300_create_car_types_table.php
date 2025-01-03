@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('car_types', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('country_id')->constrained('countries');
             $table->string('name', 45);
         });
     }

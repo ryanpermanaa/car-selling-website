@@ -2,6 +2,10 @@
 
 namespace Database\Seeders;
 
+use App\Models\CarType;
+use App\Models\City;
+use App\Models\Country;
+use App\Models\State;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -13,11 +17,12 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
+        Country::factory(3)->has(
+            CarType::factory(2)
+        )->create();
 
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
-        ]);
+        State::factory(3)->has(
+            City::factory(3)
+        )->create();
     }
 }
