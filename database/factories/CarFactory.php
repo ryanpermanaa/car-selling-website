@@ -21,10 +21,7 @@ class CarFactory extends Factory
     public function definition(): array
     {
         return [
-            'country_id' => Country::inRandomOrder()->first()->id,
-            'car_type_id' => function (array $attributes) {
-                CarType::where('country_id', $attributes['country_id'])->first()->id;
-            },
+            'car_type_id' => CarType::inRandomOrder()->first()->id,
             'user_id' => User::inRandomOrder()->first()->id,
             'city_id' => City::inRandomOrder()->first()->id,
             'age' => fake()->numberBetween(1, 15),

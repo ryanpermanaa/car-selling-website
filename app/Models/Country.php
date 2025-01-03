@@ -16,11 +16,6 @@ class Country extends Model
         'name'
     ];
 
-    public function cars(): HasMany
-    {
-        return $this->hasMany(Car::class);
-    }
-
     public function carTypes(): HasMany
     {
         return $this->hasMany(CarType::class);

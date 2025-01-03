@@ -14,7 +14,8 @@ class CarType extends Model
     public $timestamps = false;
 
     protected $fillable = [
-        'name'
+        'name',
+        'country_id'
     ];
 
     public function cars(): HasMany

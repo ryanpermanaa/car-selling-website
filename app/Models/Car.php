@@ -16,7 +16,6 @@ class Car extends Model
     use HasFactory, SoftDeletes;
 
     protected $fillable = [
-        'country_id',
         'car_type_id',
         'user_id',
         'city_id',
@@ -41,11 +40,6 @@ class Car extends Model
     public function city(): BelongsTo
     {
         return $this->belongsTo(City::class);
-    }
-
-    public function country(): BelongsTo
-    {
-        return $this->belongsTo(Country::class);
     }
 
     public function owner(): BelongsTo
