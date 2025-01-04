@@ -24,6 +24,7 @@ class CarFactory extends Factory
             'car_type_id' => CarType::inRandomOrder()->first()->id,
             'user_id' => User::inRandomOrder()->first()->id,
             'city_id' => City::inRandomOrder()->first()->id,
+            'name' => fake()->firstName(),
             'age' => fake()->numberBetween(1, 15),
             'price' => ((int) fake()->randomFloat(2, 1, 10)) * 1000,
             'address' => fake()->address(),

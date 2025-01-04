@@ -16,6 +16,7 @@ return new class extends Migration
             $table->foreignId('car_type_id')->constrained('car_types');
             $table->foreignId('user_id')->constrained('users');
             $table->foreignId('city_id')->constrained('cities');
+            $table->string('name', 40);
             $table->integer('age');
             $table->integer('price');
             $table->string('address');
