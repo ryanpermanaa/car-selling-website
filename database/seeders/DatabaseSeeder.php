@@ -3,13 +3,13 @@
 namespace Database\Seeders;
 
 use App\Models\Car;
-use App\Models\CarFeature;
 use App\Models\CarType;
 use App\Models\City;
 use App\Models\Country;
 use App\Models\State;
 use App\Models\User;
 use App\Models\CarImage;
+use Illuminate\Database\Eloquent\Factories\Sequence;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -54,7 +54,11 @@ class DatabaseSeeder extends Seeder
 
         User::factory(2)->has(
             Car::factory(10)
-                ->hasImages(5)
+                ->has(
+                    CarImage::factory(5)
+                        ->sequence(fn(Sequence $sequence) => ['position' => $sequence->index % 5 + 1]),
+                    'images'
+                )
                 ->hasFeatures(),
             'favouriteCars'
         )->create();
