@@ -11,7 +11,7 @@ class HomeController extends Controller
     public function index()
     {
         $cars = Car::where('published_at', '<', now())
-            ->orderBy('published_at', 'desc')
+            ->latest('published_at')
             ->limit(20)
             ->get();
 
