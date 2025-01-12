@@ -15,7 +15,11 @@
                 </svg>
             </button>
         </div>
-        <h2 class="car-item-title">{{ $car->name }} ({{ $car->age }} years old)</h2>
+        <h2 class="car-item-title">
+            <a href="{{ route('car.show', $car) }}">
+                {{ $car->name }} ({{ $car->age . ' ' . Str::plural('year', $car->age) . ' old' }})
+            </a>
+        </h2>
         <p class="car-item-price">${{ $car->price }}</p>
         <hr />
         <p class="m-0">

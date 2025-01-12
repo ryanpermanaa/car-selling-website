@@ -716,6 +716,16 @@ main {
   font-size: 16px;
 }
 
+.car-item-title a {
+  color: inherit;
+  text-decoration: none;
+  transition: 250ms;
+}
+
+.car-item-title a:hover {
+  color: #e9580c;
+}
+
 .car-item-price {
   font-weight: 500;
 }

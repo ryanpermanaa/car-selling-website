@@ -36,7 +36,7 @@ class CarController extends Controller
      */
     public function show(Car $car)
     {
-        return view("car.show");
+        return view("car.show", ['car' => $car]);
     }
 
     /**
@@ -65,6 +65,15 @@ class CarController extends Controller
 
     public function search()
     {
-        return view("car.search");
+        $query = Car::where('published_at', '<', now())
+            ->latest('published_at');
+
+        $carsCount = $query->count();
+        $cars = $query->limit(30)->get();
+
+        return view("car.search", [
+            'cars' => $cars,
+            'carsCount' => $carsCount
+        ]);
     }
 }
