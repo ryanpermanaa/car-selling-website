@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Route::get('/car/search', [CarController::class, 'search'])->name('car.search');
+Route::get('/car/favourite', [CarController::class, 'favourite_car'])->name('car.favourite');
 Route::resource('car', CarController::class);
 
 Route::get('/signup', [SignupController::class, 'create'])->name('signup');

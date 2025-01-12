@@ -81,4 +81,13 @@ class CarController extends Controller
             'carsCount' => $carsCount
         ]);
     }
+
+    public function favourite_car()
+    {
+        $cars = User::find(5)->favouriteCars()->get();
+
+        return view("car.favourite", [
+            'cars' => $cars
+        ]);
+    }
 }
