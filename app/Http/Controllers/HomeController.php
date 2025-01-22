@@ -11,6 +11,7 @@ class HomeController extends Controller
     public function index()
     {
         $cars = Car::where('published_at', '<', now())
+            ->with(['primaryImage', 'city', 'carType'])
             ->latest('published_at')
             ->limit(20)
             ->get();
